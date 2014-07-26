@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
 <style>
-  .container{
+  
+  #chart-container{
   margin:auto;
   text-align:center;
   font: 12px sans-serif;
@@ -42,7 +43,7 @@
   opacity:0.05;
   }
 
-  .row{
+  .crow{
   display: inline-block;
   }
 
@@ -51,24 +52,25 @@
   }
   
 </style>
- 
+<div class='container'> 
   <h2 id='main-title'>Visualizing Walking Using Smartphone Accelerometers</h2>
-  <p>I wanted to try and visualize some multi-dimensional data and found some interesting <a href='https://archive.ics.uci.edu/ml/datasets/User+Identification+From+Walking+Activity'>sets</a> at the UCI Machine Learning Repository, from an <a href='http://www.cvc.uab.es/~petia/2011/Piero%20Personalization.pdf'>academic study</a> on user verification using biometric walking patterns.</br>  
-  The smartphone in your pocket can do more than just register your position with GPS or wifi (and send it back to who knows who?), most these days have built in accelerometers that can measure change in movement in three axes. In the study visualized below mobile phones were placed in the users' breastpockets and a simple course followed while data from the phone's accelerometers was recorded. The red, green and blue dots show a heat-trace for three individuals of accelerometer output over the time-trial, clearly showing their individual 'walking signature'. 
+  <p>I wanted to try and visualize some multi-dimensional data and found some interesting <a href='https://archive.ics.uci.edu/ml/datasets/User+Identification+From+Walking+Activity'>sets</a> at the UCI Machine Learning Repository, from an <a href='http://www.cvc.uab.es/~petia/2011/Piero%20Personalization.pdf'>academic study</a> on user verification using biometric walking patterns. The x, y and z dimension accelerometer outputs can be displayed with three graphs and by using a heat-trace over time a distinct signature for each user is plotted.</br>  
+    The smartphone in your pocket can do more than just register your position with GPS or wifi (and send it back to who knows who?), most these days have built in accelerometers that can measure change in movement in three axes. In the study visualized below mobile phones were placed in the users' breastpockets and a simple course followed while data from the phone's accelerometers was recorded. The red, green and blue dots show a heat-trace for three individuals of accelerometer output over the time-trial, clearly showing their individual 'walking signature'. 
   </p> 
-  
-<div class='container'>
-  <div id='timer'></div>
-  <div class='row'>
-    <svg id="chart_zx"></svg>
-    <image src='images/walker_axes.png'></image>
-  </div></br>
-  <div class='row'>
-    <svg id="chart_zy"></svg>
-    <svg id="chart_xy"></svg>
+
+  <div id='chart-container'>
+    <div id='timer'></div>
+    <div class='crow'>
+      <svg id="chart_zx"></svg>
+      <image src='images/walker_axes.png'></image>
+    </div></br>
+    <div class='crow'>
+      <svg id="chart_zy"></svg>
+      <svg id="chart_xy"></svg>
+    </div>
   </div>
 </div>
-
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
 <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js"></script>
 <script src="http://d3js.org/d3.v3.min.js"></script>
